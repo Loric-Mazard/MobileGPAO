@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RFID_Android_XAML.ScanRFIDContainer"
+             x:Name="PageScanRFIDContainer"
+             ClassId="PageScanRFIDContainer"
+             Title="">
+
+    <StackLayout x:Name="stackLayout">
+
+        <Label x:Name="lblTitre"
+               Margin="0,25,0,10"
+               BindingContext="modeAppairage"
+               Text="{Binding Description}"
+               FontSize="25"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+        <Button x:Name="btn_scanner"
+                Text="Scanner"
+                Clicked="onScannerClicked"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+
+        <Label Text=""
+                FontSize="Medium"
+                x:Name="lblNumCarton"
+                Margin="0,20,0,10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Label Text=""
+                FontSize="Medium"
+                x:Name="lblNbAttendu"
+                Margin="0,0,0,10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Label Text="Nombre de pièces scannées : 0"
+                FontSize="Medium"
+                x:Name="lblNbTag"
+                Margin="0,0,0,10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <ProgressBar x:Name="pgbScan" 
+                Grid.Row="1" 
+                Grid.ColumnSpan="5"
+                IsVisible="true"
+                Progress="0.0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Label x:Name="lblStatut"
+                FontAttributes="Italic"
+                FontSize="Medium"
+                Margin="0,0,0,30"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+
+    </StackLayout>
+    
+</ContentPage>

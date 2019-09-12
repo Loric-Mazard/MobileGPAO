@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RFID_Android_XAML.ScanRFIDToList"
+             x:Name="PageScanRFIDToList"
+             ClassId="PageScanRFIDToList"
+             Title="">
+
+    <StackLayout x:Name="stackLayout">
+
+        <Label Margin="0,25,0,10"
+               Text="{Binding Description}"
+               FontSize="25"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Cliquez pour lancer/arrêter un scan"
+                Margin="0,0,0,10"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Button
+                Text="Mode RFID"
+                Clicked="onStartClicked"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+
+        <Label Text="Nombre de pièces scannées : 0"
+                FontSize="Medium"
+                x:Name="lblNbTag"
+                Margin="0,0,0,10"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <ProgressBar x:Name="pgbScan" 
+                Grid.Row="1" 
+                Grid.ColumnSpan="5"
+                IsVisible="true"
+                Progress="0.0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Label x:Name="lblStatut"
+                FontAttributes="Italic"
+                FontSize="Medium"
+                Margin="0,0,0,30"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+        <Button
+                Text="Fin"
+                Clicked="onFinClicked"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+
+    </StackLayout>
+    
+</ContentPage>

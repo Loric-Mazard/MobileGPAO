@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RFID_Android_XAML.Identification"
+             Title="Identification"
+             ClassId="PageIdentification">
+
+
+    <StackLayout>
+
+        <Label Margin="0,25,0,10"
+               Text="Scannez votre identifiant"
+               FontSize="20"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"/>
+
+        <Entry x:Name="EntryUtilisateurID" Placeholder="#" Margin="10,0,10,0"/>
+
+        <Button Text="Valider"
+                Clicked="onValiderClicked"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+
+        <Button Text="Scanner"
+                HorizontalOptions="Center"
+                Clicked="onScannerClicked"/>
+
+        <Label x:Name="lblStatut"
+                FontAttributes="Italic"
+                FontSize="Medium"
+                Margin="0,10,0,0"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+    </StackLayout>
+    
+</ContentPage>
