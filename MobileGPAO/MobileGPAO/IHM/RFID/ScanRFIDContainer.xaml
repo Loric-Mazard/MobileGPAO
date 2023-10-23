@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPAOnGo.IHM.RFID.IHMScanRFIDContainer"
+             ClassId="PageScanRFIDContainer"
+             Title="{Binding Appairage_Mode_Description}">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0" HeightRequest="1000">
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}"  Text="N° Box" />
+                    <Label Grid.Row="0" Grid.Column="1" Style="{DynamicResource SmallBoldStartImportant_Label}" 
+                            Text="{Binding Identification}" />
+                    <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}"  Text="Qtt Tag Attendu" />
+                    <Label Grid.Row="1" Grid.Column="1" Style="{DynamicResource SmallBoldStartImportant_Label}" 
+                            Text="{Binding QttAttendue}" />
+                    <Label Grid.Row="2" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}"  Text="Qtt Tag Affecte" />
+                    <Label Grid.Row="2" Grid.Column="1" Style="{DynamicResource SmallBoldStart_Label}" 
+                            Text="{Binding QttScan}" />
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Frame Style="{DynamicResource Widget_Frame}">
+                    <Grid Padding="10" HorizontalOptions="CenterAndExpand">
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Style ="{DynamicResource SmallBoldEnd_Label}" HorizontalTextAlignment="End" FontSize="Small" FontAttributes="Bold"  Text="Qtt Tag Scan" />
+                        <Label Grid.Row="0" Grid.Column="1" Style ="{DynamicResource SmallBoldStart_Label}"
+                            x:Name="lbl_Statut_NbTagScan" />
+                        <ProgressBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" IsVisible="true"
+                            Progress="0.0"
+                            x:Name="pgb_NbTagScan" />
+                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style ="{DynamicResource SmallBoldCenter_Label}"
+                            x:Name="lbl_Statut_Scan"/>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>

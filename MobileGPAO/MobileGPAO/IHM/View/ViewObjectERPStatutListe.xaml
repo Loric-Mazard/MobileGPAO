@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:GPAOnGo.UTILITAIRE"
+             x:Class="GPAOnGo.IHM.ViewObjectERPStatutListe">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Converters:BooleanConverter x:Key="BooleanConverter" />
+            <Converters:StyleConverter x:Key="StyleConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
+    <ContentView.Content>
+        <Frame Padding="2">
+            <CollectionView 
+                    EmptyView="Liste Item Vide"
+                    Margin="0"
+                    ItemsSource="{Binding StatutNGO.NGOStatutListe.Collection}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnSelectedItem">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" 
+                                        Text="{Binding Description}" />
+                            <Label Grid.Row="1" Grid.Column="0" HorizontalTextAlignment="Start" VerticalOptions="End" FontSize="Micro" FontAttributes="Bold" TextColor="Red"
+                                        Text="{Binding DataString}" />
+                            <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalOptions="End"  FontSize="Micro" FontAttributes="None"
+                                        Text="{Binding Date}" />
+                            <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="End" HorizontalTextAlignment="End" VerticalOptions="End" FontSize="Micro" FontAttributes="None"
+                                        Text="{Binding User}" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

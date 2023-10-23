@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Controls="clr-namespace:GPAOnGo.IHM"
+             xmlns:Converters="clr-namespace:GPAOnGo.UTILITAIRE"
+             x:Class="GPAOnGo.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <Converters:BooleanConverter x:Key="BooleanConverter" />
+            <Converters:StyleConverter x:Key="StyleConverter"/>
+            <Converters:TypeToLabelVisibleConverter x:Key="TypeToLabelVisibleConverter" />
+            <Color x:Key="CouleurMenu">#1976D2</Color>
+            <Color x:Key="CouleurSousMenu">White</Color>
+            <Color x:Key="CouleurInformationImportante">Red</Color>
+            <Color x:Key="CouleurWidget">Aqua</Color>
+            <Style x:Key="GPAOLogo_Image" TargetType="Image">
+                <Setter Property="Source" Value="@drawable/GPAOlogo" />
+            </Style>
+            <Style x:Key="Menu_StackLayout" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="{StaticResource CouleurMenu}" />
+                <Setter Property="HeightRequest" Value="55" />
+            </Style>
+            <Style x:Key="Default_Label" TargetType="Label"/>
+            <Style x:Key="Menu_Label" TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="Title" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
+            <Style x:Key="SousMenu_Label" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="{StaticResource CouleurSousMenu}" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="VerticalTextAlignment" Value="Center" />
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="LargeBoldCenter_Label" TargetType="Label">
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="SmallStart_Label" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+            <Style x:Key="SmallBoldStart_Label" TargetType="Label" BasedOn="{StaticResource SmallStart_Label }">
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="SmallBoldStartImportant_Label" TargetType="Label" BasedOn="{StaticResource SmallBoldStart_Label}">
+                <Setter Property="BackgroundColor" Value="{StaticResource CouleurInformationImportante}" />
+            </Style>
+            <Style x:Key="SmallBoldCenter_Label" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" /> 
+            </Style>
+            <Style x:Key="SmallBoldEnd_Label" TargetType="Label">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+            <Style x:Key="Widget_Frame" TargetType="Frame">
+                <Setter Property="BorderColor" Value="Black" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="BackgroundColor" Value="{StaticResource CouleurWidget}" />
+            </Style>
+            <DataTemplate x:Key="ViewObjectERP_NA">
+                <Frame BorderColor="Black" Padding="0" Margin="0"
+                    Grid.Row="{Binding Row}">
+                    <Label Text="NA"/>
+                </Frame>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewObjectERP_ListeMultiple">
+                <Grid Grid.Row="{Binding Ordre}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Padding="0" Margin="0">
+                        <StackLayout>
+                            <Controls:ViewObjectERPListeListe BindingContext="{Binding .}"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewObjectERP_ListeSimple">
+                <Grid Grid.Row="{Binding Ordre}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Padding="0" Margin="0" BackgroundColor="LightGray">
+                        <Controls:ViewObjectERPItemListe 
+                            BindingContext="{Binding ListeChamps.Collection[0]}"/>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewSfChart_ColumnSeries">
+                <Grid Grid.Row="{Binding Ordre}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/> 
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="1" Padding="0" Margin="2" HeightRequest="200">
+                        <Controls:ViewSfChart_ColumnSeries BindingContext="{Binding .}"/>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewSfChart_LineSeries">
+                <Grid Grid.Row="{Binding Ordre}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="1" Padding="0" Margin="2" HeightRequest="200">
+                        <Controls:ViewSfChart_LineSeries BindingContext="{Binding .}"/>
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewObjectERP_ListeMenu">
+                <Grid Grid.Row="{Binding Ordre}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Padding="0" Margin="0">
+                        <Controls:ViewObjectERPItemListe 
+                            BindingContext="{Binding ListeChamps.Collection[0]}" />
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewNGO_Treeview">
+                <Grid Grid.Row="{Binding Ordre}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Frame Grid.Row="0" Padding="0" Margin="0">
+                        <Controls:ViewNGOTreeView
+                            BindingContext="{Binding .}" />
+                    </Frame>
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewObjectERP_Item_Menu">
+                <StackLayout Grid.Row="0">
+                    <Controls:ViewObjectERPItem_Menu BindingContext="{Binding .}"/>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewObjectERP_Item_Detail">
+                <StackLayout Grid.Column="{Binding Ordre}" Grid.Row="0">
+                    <Controls:ViewObjectERPItem_Detail BindingContext="{Binding .}"/>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="ViewObjectERP_Item_NA">
+                <Label Text="Item_NA"/>
+            </DataTemplate>
+            <Converters:TemplateSelector_PresentationGroupe x:Key="TemplateSelector_ViewObjectERP"
+                Template_ListeSimple="{StaticResource ViewObjectERP_ListeSimple}"
+                Template_ListeMultiple="{StaticResource ViewObjectERP_ListeMultiple}"
+                Template_SfChart_ColumnSeries="{StaticResource ViewSfChart_ColumnSeries}" 
+                Template_SfChart_LineSeries="{StaticResource ViewSfChart_LineSeries}" 
+                Template_NA="{StaticResource ViewObjectERP_NA}" 
+                Template_Menu="{StaticResource ViewObjectERP_ListeMenu}"
+                Template_TreeView="{StaticResource ViewNGO_Treeview}"/>
+            <Converters:TemplateSelector_PresentationItems x:Key="TemplateSelector_ViewObjectItem"
+                Template_Item_Menu="{StaticResource ViewObjectERP_Item_Menu}"
+                Template_Item_Detail="{StaticResource ViewObjectERP_Item_Detail}"
+                Template_Item_NA="{StaticResource ViewObjectERP_Item_NA}" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

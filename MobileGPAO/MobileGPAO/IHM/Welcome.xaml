@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="clr-namespace:GPAOnGo;assembly=GPAOnGo"
+             x:Class="GPAOnGo.IHM.IHMWelcome"
+             Title="GPAOnGo">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Base Prod" Order="Secondary" Priority="0" Clicked="onBaseProd_Clicked" />
+        <ToolbarItem Text="Base Test" Order="Secondary" Priority="1" Clicked="onBaseTest_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0" HeightRequest="1000">
+                <Image AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional" Style="{DynamicResource GPAOLogo_Image}"/>
+                <Label AbsoluteLayout.LayoutBounds="0.5,0.6" AbsoluteLayout.LayoutFlags="PositionProportional" Style="{DynamicResource LargeBoldCenter_Label}" Text="CAWE FTB GROUP" />
+                <Label x:Name="lblVersionBuild" AbsoluteLayout.LayoutBounds="0.5,0.7" AbsoluteLayout.LayoutFlags="PositionProportional" Style="{DynamicResource LargeBoldCenter_Label}" />
+                <Label x:Name="lblModeProduction" AbsoluteLayout.LayoutBounds="0.5,0.8" AbsoluteLayout.LayoutFlags="PositionProportional" Style="{DynamicResource LargeBoldCenter_Label}" />
+            </AbsoluteLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Button Text="Demarrer" HorizontalOptions="Center" Clicked="onIdentificationClicked"/>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>

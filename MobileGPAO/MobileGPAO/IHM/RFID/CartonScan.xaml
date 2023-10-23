@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPAOnGo.IHM.RFID.IHMCartonScan"
+             ClassId="PageCartonScan"
+             Title="{Binding Description}">
+
+    <StackLayout x:Name="StackLayout">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0" HeightRequest="1000">
+                <Label AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional" Style="{DynamicResource SmallBoldCenter_Label}" HorizontalTextAlignment="Center" Text="Scannez le container" />
+                <Entry AbsoluteLayout.LayoutBounds="0.5,0.48" AbsoluteLayout.LayoutFlags="PositionProportional" x:Name="EntryID" HorizontalTextAlignment="Center" WidthRequest="100" Placeholder="#" FontSize="Small"
+                    Text="{Binding Identification}" />
+                <Button AbsoluteLayout.LayoutBounds="0.5,0.6" AbsoluteLayout.LayoutFlags="PositionProportional" Text="Valider"  HorizontalOptions="Center" FontSize="Small"
+                        Clicked="onValiderClicked" />
+            </AbsoluteLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" >
+                <Button Text="Scanner" HorizontalOptions="Center"
+                    Clicked="onScannerClicked"/>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,219 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <AssemblyName>GPAOnGo</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+    <PackageId>GPAOnGo</PackageId>
+    <Product>GPAOnGo</Product>
+    <Authors>CHATON Matthieu</Authors>
+    <Company>CAWE FTB GROUP</Company>
+    <RootNamespace>GPAOnGo</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NewFolder1\**" />
+    <Compile Remove="Resource\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="Resource\**" />
+    <None Remove="NewFolder1\**" />
+    <None Remove="Resource\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
+    <PackageReference Include="ZXing.Net.Mobile" Version="3.1.0-beta2" />
+    <PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.1.0-beta2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="IHM\ERP\IHMERPStatut_LinearGauge.xaml.cs">
+      <DependentUpon>IHMERPStatut_LinearGauge.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\ERP\IHMERPStatut_TextLibre.xaml.cs">
+      <DependentUpon>IHMERPStatut_TextLibre.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\ERP\ObjectERPScanRecherche.xaml.cs">
+      <DependentUpon>ObjectERPScanRecherche.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\ERP\IHMERPStatutChoixListe.xaml.cs">
+      <DependentUpon>IHMERPStatutChoixListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\ERP\IHMERPStatutListe.xaml.cs">
+      <DependentUpon>IHMERPStatutListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\ERP\IHMERPList.xaml.cs">
+      <DependentUpon>IHMERPList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\ERP\ObjectERPScan.xaml.cs">
+      <DependentUpon>ObjectERPScan.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\SFChart\ViewSfChart_LineSeries.xaml.cs">
+      <DependentUpon>ViewSfChart_LineSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\SFChart\ViewSfChart_ColumnSeries.xaml.cs">
+      <DependentUpon>ViewSfChart_ColumnSeries.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPInfo.xaml.cs">
+      <DependentUpon>ViewObjectERPInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewToolbarItem.xaml.cs">
+      <DependentUpon>ViewToolbarItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPItem_Detail.xaml.cs">
+      <DependentUpon>ViewObjectERPItem_Detail.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPItem_Menu.xaml.cs">
+      <DependentUpon>ViewObjectERPItem_Menu.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPItemListe.xaml.cs">
+      <DependentUpon>ViewObjectERPItemListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewCustomToolbarItem.xaml.cs">
+      <DependentUpon>ViewCustomToolbarItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPStatutListe.xaml.cs">
+      <DependentUpon>ViewObjectERPStatutListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPGroupeListe.xaml.cs">
+      <DependentUpon>ViewObjectERPGroupeListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\View\ViewObjectERPListeListe.xaml.cs">
+      <DependentUpon>ViewObjectERPListeListe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\RFID\ScanRFIDToList.xaml.cs">
+      <DependentUpon>ScanRFIDToList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\RFID\ScanRFIDContainer.xaml.cs">
+      <DependentUpon>ScanRFIDContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\UTILISATEUR\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="IHM\UTILITAIRE\CustomPage.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="IHM\ERP\IHMERPStatutListe.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="IHM\View\ViewToolbarItem.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="IHM\Welcome.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="IHM\UTILITAIRE\CustomPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Control\ScanRFID.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\Connexion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\ERP\IHMERPList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\ERP\IHMERPStatutChoixListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\ERP\IHMERPStatutListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\ERP\ObjectERPScan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\ERP\ObjectERPScanRecherche.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\Identification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\Menus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\RFID\CartonScan.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\RFID\ScanRFIDContainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\RFID\ScanRFIDToList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\UTILISATEUR\ChangePassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\UTILISATEUR\Identification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\UTILITAIRE\CustomPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewCustomToolbarItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewObjectERPGroupeListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewObjectERPItemListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewObjectERPItem_Detail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewObjectERPItem_Menu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewObjectERPListeListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\View\ViewObjectERPStatutListe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="IHM\Welcome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Control\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\KDCReader\KDCReader.csproj" />
+  </ItemGroup>
+</Project>

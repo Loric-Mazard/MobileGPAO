@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Controls="clr-namespace:GPAOnGo.IHM;assembly=GPAOnGo"
+    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
+    x:Class="GPAOnGo.IHM.ERP.IHMNGOAjoutObject"
+    ClassId="IHMNGOAjoutObject"
+    Title="{Binding Nom}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="LogOff" Order="Secondary" Priority="0" Clicked="OnLofOff_Clicked" />
+        <ToolbarItem Text="RFID" Order="Secondary" Priority="0" Clicked="OnRFID_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Entry HorizontalTextAlignment="Center" x:Name="nomObjectTextBox" Placeholder="Nom" TextChanged="NomTextChanged"/>
+        <Entry HorizontalTextAlignment="Center" x:Name="typeObjectTextBox" Placeholder="Type" TextChanged="TypeTextChanged"/>
+        <Controls:ViewObjectERPGroupeListe  
+                    BindingContext="{Binding Vues_liste}"/>
+    </StackLayout>
+
+</ContentPage>

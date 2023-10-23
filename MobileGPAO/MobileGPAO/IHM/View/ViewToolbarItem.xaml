@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    x:Class="GPAOnGo.IHM.ViewToolbarItem"
+                 MinimumHeightRequest="0">
+    <StackLayout VerticalOptions="Center" Padding="20, 20, 20, 20" HeightRequest="200">
+        <StackLayout BackgroundColor="Black">
+
+            <CollectionView
+                EmptyView="Liste Liste Vide"  
+                Margin="2,2"
+                ItemsSource="{Binding ERPObjectToListe.Collection}"
+                VerticalScrollBarVisibility="Always"
+                SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="Black">
+                            <Label TextColor="Black" Text="{Binding TODescription}" Style="{StaticResource SmallBoldCenter_Label}"></Label>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+           
+        </StackLayout>
+        <Button Text="Close" TextColor="#A9D1DE" Clicked="OnClose"></Button>
+    </StackLayout>
+</pages:PopupPage>

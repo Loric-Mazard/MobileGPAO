@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPAOnGo.IHM.ERP.IHMObjectERPScan"
+             xmlns:Converters="clr-namespace:GPAOnGo.UTILITAIRE"
+              xmlns:behaviors="clr-namespace:GPAOnGo.Behaviors"
+             ClassId="PageObjectERPScan"
+             Title="{Binding Nom}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:BooleanConverter x:Key="BooleanConverter" />
+            <Converters:StyleConverter x:Key="StyleConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <AbsoluteLayout Grid.Row="0" Grid.Column="0" HeightRequest="1000">
+                <Label AbsoluteLayout.LayoutBounds="0.5,0.4" AbsoluteLayout.LayoutFlags="PositionProportional" Style="{DynamicResource SmallBoldCenter_Label}" HorizontalTextAlignment="Center" />
+                <Entry x:Name="oEntry"
+                    AbsoluteLayout.LayoutBounds="0.5,0.48" AbsoluteLayout.LayoutFlags="PositionProportional" 
+                    HorizontalTextAlignment="Center" WidthRequest="100" Placeholder="#" FontSize="Small"
+                      Text="{Binding PK}">
+                    <Entry.Behaviors>
+                        <behaviors:EntryExtendedBehavior/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Button AbsoluteLayout.LayoutBounds="0.9,0.48" AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Text="?"
+                    Clicked="onRechercherClicked"/>
+                <Button AbsoluteLayout.LayoutBounds="0.5,0.6" AbsoluteLayout.LayoutFlags="PositionProportional"
+                    Text="Valider" HorizontalOptions="Center" FontSize="Small"
+                    Clicked="onValiderClicked" />
+            </AbsoluteLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" >
+                <Button Text="Scanner" HorizontalOptions="Center"
+                    Clicked="onScannerClicked"/>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

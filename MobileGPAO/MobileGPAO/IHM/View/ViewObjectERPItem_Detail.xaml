@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:GPAOnGo.UTILITAIRE"
+             x:Class="GPAOnGo.IHM.ViewObjectERPItem_Detail">
+
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Converters:BooleanConverter x:Key="BooleanConverter" />
+            <Converters:StyleConverter x:Key="StyleConverter" />
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid Margin="0" Padding="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" LineBreakMode="NoWrap" 
+                Style="{DynamicResource SmallBoldCenter_Label}" 
+                IsVisible="{Binding ERPObjectItemIHM.Visible, Converter={StaticResource BooleanConverter}}"
+                Text="{Binding Titre}"/>
+            <Label Grid.Column="1" LineBreakMode="NoWrap"
+                Style="{Binding ERPObjectItemIHM.Important, Converter={StaticResource StyleConverter}}"  
+                IsVisible="{Binding ERPObjectItemIHM.Visible, Converter={StaticResource BooleanConverter}}"
+                Text="{Binding Valeur}"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

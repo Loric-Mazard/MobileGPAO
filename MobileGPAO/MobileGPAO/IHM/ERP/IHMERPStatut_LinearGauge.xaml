@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             ClassId="IHMERPStatut_LinearGauge"
+             x:Class="GPAOnGo.IHM.ERP.IHMERPStatut_LinearGauge"
+             Title="{Binding Description}">
+
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}"
+                        Text="{Binding Description, StringFormat='N°{0}'}" />
+                    <Label Grid.Row="0" Grid.Column="1" Style="{DynamicResource SmallBoldStartImportant_Label}"
+                        Text="{Binding PK}" />
+                    <Label Grid.Row="1" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}" Text="Curent Value" />
+                    <Label Grid.Row="1" Grid.Column="1" Style="{DynamicResource SmallBoldStartImportant_Label}" 
+                        Text="{Binding DataString}" />
+                    <Label Grid.Row="2" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}" Text="Date" />
+                    <Label Grid.Row="2" Grid.Column="1" Style="{DynamicResource SmallBoldStart_Label}" FontAttributes="Bold"
+                        Text="{Binding Date}" />
+                    <Label Grid.Row="3" Grid.Column="0" Style="{DynamicResource SmallBoldStart_Label}" Text="User" />
+                    <Label Grid.Row="3" Grid.Column="1" Style="{DynamicResource SmallBoldStart_Label}"
+                        Text="{Binding User}" />
+                </Grid>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0">
+                <Label Style="{DynamicResource SousMenu_Label}" Text="Pourcentage Libre"/>
+            </StackLayout>
+            <Grid Grid.Row="2" Grid.Column="0" HeightRequest="1000">
+                <Button Grid.Row="0" Grid.Column="0" Text="Valider"/>
+            </Grid>
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

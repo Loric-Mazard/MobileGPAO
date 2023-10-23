@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPAOnGo.IHM.ViewCustomToolbarItem">
+
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" Spacing="10" Padding="5,5,5,5">
+            <Image x:Name="iconImage" HeightRequest="30" HorizontalOptions="Start" VerticalOptions="Center" />
+            <Label x:Name="menuText" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="Start" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
